@@ -1,0 +1,67 @@
+name: Question
+description: Ask how to do something in MeshTest that the docs don't answer.
+title: "[question] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions are welcome. Well-scoped questions often turn into docs
+        improvements — filing a good one directly makes MeshTest better for
+        the next person.
+
+        Before asking, please skim **[meshtest.dev/docs](https://meshtest.dev/docs)** — quickstart, CLI reference, manifest schema, auth guide, and telemetry reference cover most common questions.
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Which surface is your question about?
+      options:
+        - "@meshtest/cli"
+        - "@meshtest/server (MCP)"
+        - Manifest / YAML schema
+        - Auth / secrets handling
+        - Baselines / diff / CI
+        - Docs feedback
+        - General
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: What are you trying to do?
+      description: |
+        The end goal, not just the current stuck point. Example: "I want to
+        run smoke tests on every PR and full regression nightly, using the
+        same manifest for both."
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What have you tried?
+      description: Commands run, docs pages read, guesses attempted.
+    validations:
+      required: true
+
+  - type: textarea
+    id: confusion
+    attributes:
+      label: What's confusing?
+      description: |
+        Did the docs suggest something that didn't work? Was an error message
+        unhelpful? Missing example? This helps me improve the docs, not just
+        answer your question.
+    validations:
+      required: false
+
+  - type: textarea
+    id: setup
+    attributes:
+      label: Relevant snippet (optional)
+      description: A manifest fragment, command line, or config snippet if it helps clarify.
+      render: shell
+    validations:
+      required: false

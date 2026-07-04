@@ -1,0 +1,66 @@
+name: Feature request
+description: Suggest an idea, enhancement, or new capability for MeshTest.
+title: "[feature] "
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for thinking about how MeshTest could be better.
+
+        Feature requests that land are usually the ones that describe a **real end-to-end workflow** rather than an isolated API tweak. The two sections below matter most.
+
+  - type: dropdown
+    id: package
+    attributes:
+      label: Which package does this affect?
+      options:
+        - "@meshtest/cli"
+        - "@meshtest/server"
+        - Both
+        - Docs / website
+        - Not sure yet
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: |
+        Describe the real workflow you're trying to enable — not the API you'd
+        like to see. "I want to run smoke tests only in CI, and full regression
+        nightly" is more useful than "add a --smoke flag".
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: |
+        How would you like MeshTest to behave? A command sketch, a manifest
+        snippet, or a paragraph — whichever is clearest.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What have you tried, and prior art?
+      description: |
+        Existing MeshTest features that get close, plus how other tools
+        (Newman, k6, Postman, Bruno, Hurl, DD Synthetic) handle it. Link
+        anything relevant.
+    validations:
+      required: false
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Anything else?
+      description: |
+        Non-goals, edge cases, or trade-offs you want to call out — anything
+        that helps decide whether this belongs in MeshTest at all.
+    validations:
+      required: false
